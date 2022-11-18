@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="first">
+        <div class="title">A task</div>
+        <p id="web">Turned on</p>
+        <button class="btn1" onclick="check()">Click</button>
+    
+    </section>
+    <section class="second">
+        <div class="title">B task</div>
+        <img id="img1" src="img/flag.png" alt="" onmouseover=clicker() onmouseout=outer()>
+        <img id="img2" src="img/flag.png" alt="" onmouseover=clicker() onmouseout=outer()>
+        <img id="img3" src="img/flag.png" alt="" onmouseover=clicker() onmouseout=outer()>
+        <img id="img4" src="img/flag.png" alt="" onmouseover=clicker() onmouseout=outer()>
+        <img id="img5" src="img/flag.png" alt="" onmouseover=clicker() onmouseout=outer()>
+    </section>
+    <section class="third">
+        <div class="title">C task</div>
+        <h1 class="text tex" onmouseout=mOut(this) style="font-size:40px">Text1</h1>
+        <h2 class="text" onmouseout=mOut(this) style="font-size:30px">Text2</h2>
+    </section>
+    <section class="fourth">
+        <div class="title">D task</div>
+        <div id="divv" style="width:100px;height:100px; background-color:blue;"></div>
+        <button onclick="document.getElementById('divv').style.backgroundColor='black'" ondblclick="document.getElementById('divv').style.backgroundColor='blue'">Change color</button>
+    </section>
+    <section class="fifth">
+        <div class="title">E task</div>
+        <img id="imge" src="img/insta.jpg" alt="insta">
+        <button class="btn" style="height: 30px;" onclick="changer()">facebook</button>
+        <!-- <button style="height: 30px;" onclick="document.getElementById('imge').src='img/insta.jpg'">instagram</button> -->
+    </section>
+    <section class="additional" >
+        <div class="demo" style="background-color:red"></div>
+        <div class="demo" style="background-color:blue"></div>
+        <div class="demo" style="background-color:green"></div>
+        <div class="demo" style="background-color:yellow"></div>
+        <div class="demo" style="background-color:black"></div>
+        <div id="da"></div>
+    </section>
+    <script>
+        var ans = true;
+        function check(){
+            
+            if(ans){
+                document.getElementById('web').innerHTML='Turn off';
+                ans=false;
+            }else{
+                document.getElementById('web').innerHTML='Turn on';
+                ans=true;
+            }
+        }
+        function clicker(){
+            var d = document.getElementsByTagName('img');
+            for (let i = 0; i< d.length; i++) {
+                d[i].src='img/map.png';
+            }
+        }
+        function outer(){
+            var d = document.getElementsByTagName('img');
+            for (let i = 0; i< d.length; i++) {
+                d[i].src='img/flag.png';
+            }
+        
+        }
+        function mOut(obj) {
+            document.getElementsByClassName('text')[0].style.fontSize=parseInt(((document.getElementsByClassName('text')[0].style.fontSize).substring(0,2)))+1+'px';
+            document.getElementsByClassName('text')[1].style.fontSize=parseInt(((document.getElementsByClassName('text')[1].style.fontSize).substring(0,2)))+1+'px';
+            
+        }
+        var answer = true;
+        function changer(){
+            if(answer){
+                document.getElementById('imge').src='img/face.png';
+                answer=false;
+            }else{
+                document.getElementById('imge').src='img/insta.jpg';
+                answer=true;
+            }
+        }
+        
+            const obj = document.querySelectorAll("div.demo[style='background-color:green']");
+            obj[0].style.backgroundColor='purple';
+            console.log(obj);
+        
+        </script>
+</body>
+</html>
